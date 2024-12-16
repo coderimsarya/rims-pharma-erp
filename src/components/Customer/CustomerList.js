@@ -81,7 +81,7 @@ export default function CustomerList() {
               placeholder="Search customers..."
               value={searchTerm}
               onChange={handleSearchChange}
-              InputProps={{
+              InputProps2={{
                 startAdornment: <Search sx={{ color: 'text.secondary', mr: 1 }} />,
               }}
             />

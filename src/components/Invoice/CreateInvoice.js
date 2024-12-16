@@ -3,7 +3,7 @@ import {
   Box,
   Button,
   Container,
-  Grid,
+  Grid2,
   Paper,
   Table,
   TableBody,
@@ -19,7 +19,7 @@ import {
   InputLabel,
   Dialog,
 } from '@mui/material'
-import AddCustomer from './AddCustomer'
+import AddCustomer from '../Customer/AddCustomer'
 
 function CreateInvoice() {
   const [customerDetails, setCustomerDetails] = useState({
@@ -127,8 +127,8 @@ function CreateInvoice() {
         </Box>
 
         <Paper sx={{ p: 3, mb: 3 }}>
-          <Grid container spacing={2} alignItems="center">
-            <Grid item xs={12} md={4}>
+          <Grid2 container spacing={2} alignItems="center">
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <TextField
                 fullWidth
                 label="Phone No"
@@ -137,8 +137,8 @@ function CreateInvoice() {
                   setCustomerDetails({ ...customerDetails, phone: e.target.value })
                 }
               />
-            </Grid>
-            <Grid item xs={12} md={2}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, md: 2 }}>
               <Button
                 variant="contained"
                 sx={{
@@ -148,8 +148,8 @@ function CreateInvoice() {
               >
                 Add
               </Button>
-            </Grid>
-            <Grid item xs={12} md={4}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <Button
                 variant="contained"
                 onClick={handleAddCustomerClick}
@@ -160,8 +160,8 @@ function CreateInvoice() {
               >
                 Add Customer
               </Button>
-            </Grid>
-          </Grid>
+            </Grid2>
+          </Grid2>
 
           <Box sx={{ mt: 2 }}>
             <Typography>Name - {customerDetails.name}</Typography>
@@ -174,8 +174,8 @@ function CreateInvoice() {
           <Typography variant="h6" gutterBottom>
             Billing Details
           </Typography>
-          <Grid container spacing={2} sx={{ mb: 3 }}>
-            <Grid item xs={12} md={4}>
+          <Grid2 container spacing={2} sx={{ mb: 3 }}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <TextField
                 fullWidth
                 label="Product"
@@ -187,8 +187,8 @@ function CreateInvoice() {
                   })
                 }
               />
-            </Grid>
-            <Grid item xs={12} md={3}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, md: 3 }}>
               <TextField
                 fullWidth
                 label="Qty"
@@ -198,8 +198,8 @@ function CreateInvoice() {
                   setBillingDetails({ ...billingDetails, qty: e.target.value })
                 }
               />
-            </Grid>
-            <Grid item xs={12} md={3}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, md: 3 }}>
               <TextField
                 fullWidth
                 label="MRP"
@@ -209,8 +209,8 @@ function CreateInvoice() {
                   setBillingDetails({ ...billingDetails, mrp: e.target.value })
                 }
               />
-            </Grid>
-            <Grid item xs={12} md={2}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, md: 2 }}>
               <Button
                 fullWidth
                 variant="contained"
@@ -222,8 +222,8 @@ function CreateInvoice() {
               >
                 Add Items
               </Button>
-            </Grid>
-          </Grid>
+            </Grid2>
+          </Grid2>
 
           <TableContainer component={Paper} sx={{ mb: 3 }}>
             <Table size="small">
@@ -266,14 +266,14 @@ function CreateInvoice() {
             </Table>
           </TableContainer>
 
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={8}>
+          <Grid2 container spacing={3}>
+            <Grid2 size={{ xs: 12, md: 8 }}>
               <Paper
                 sx={{ p: 2, bgcolor: '#FFF3E0', mb: { xs: 2, md: 0 } }}
                 elevation={0}
               >
-                <Grid container spacing={2}>
-                  <Grid item xs={12} md={4}>
+                <Grid2 container spacing={2}>
+                  <Grid2 size={{ xs: 12, md: 4 }}>
                     <TextField
                       fullWidth
                       label="Discount"
@@ -285,8 +285,8 @@ function CreateInvoice() {
                         })
                       }
                     />
-                  </Grid>
-                  <Grid item xs={12} md={4}>
+                  </Grid2>
+                  <Grid2 size={{ xs: 12, md: 4 }}>
                     <TextField
                       fullWidth
                       label="Discount Value"
@@ -298,8 +298,8 @@ function CreateInvoice() {
                         })
                       }
                     />
-                  </Grid>
-                  <Grid item xs={12} md={4}>
+                  </Grid2>
+                  <Grid2 size={{ xs: 12, md: 4 }}>
                     <Button
                       fullWidth
                       variant="contained"
@@ -310,8 +310,8 @@ function CreateInvoice() {
                     >
                       Add to Card
                     </Button>
-                  </Grid>
-                  <Grid item xs={12}>
+                  </Grid2>
+                  <Grid2 size={{ xs: 12 }}>
                     <Box
                       sx={{
                         display: 'flex',
@@ -336,22 +336,22 @@ function CreateInvoice() {
                         }
                       />
                     </Box>
-                  </Grid>
-                </Grid>
+                  </Grid2>
+                </Grid2>
               </Paper>
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
-              <Grid container spacing={2}>
-                <Grid item xs={12}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
+              <Grid2 container spacing={2}>
+                <Grid2 size={{ xs: 12 }}>
                   <TextField
                     fullWidth
                     label="Doctor Name"
                     value={doctorName}
                     onChange={(e) => setDoctorName(e.target.value)}
                   />
-                </Grid>
-                <Grid item xs={12}>
+                </Grid2>
+                <Grid2 size={{ xs: 12 }}>
                   <FormControl fullWidth>
                     <InputLabel>Payment Status</InputLabel>
                     <Select
@@ -363,10 +363,10 @@ function CreateInvoice() {
                       <MenuItem value="pending">Pending</MenuItem>
                     </Select>
                   </FormControl>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
+                </Grid2>
+              </Grid2>
+            </Grid2>
+          </Grid2>
 
           <Box
             sx={{

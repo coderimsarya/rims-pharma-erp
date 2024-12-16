@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Box,
   TextField,
   Typography,
   Grid,
@@ -19,7 +18,7 @@ const Title = styled(Typography)(({ theme }) => ({
   fontWeight: 500,
 }));
 
-export default function AddHSN({ onClose }) {
+export default function AddHSN({ onClose, onAdd }) {
   const [formData, setFormData] = useState({
     hsnNo: '',
     description: '',
@@ -49,7 +48,7 @@ export default function AddHSN({ onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
+    onAdd(formData);
     onClose();
   };
 

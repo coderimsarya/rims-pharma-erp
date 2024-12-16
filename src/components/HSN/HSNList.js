@@ -13,10 +13,9 @@ import {
   TableHead,
   TableRow,
   Dialog,
-  IconButton,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { Search, Add, ExitToApp } from '@mui/icons-material';
+import { Add, ExitToApp } from '@mui/icons-material';
 import AddHSN from './AddHSN';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
@@ -46,7 +45,7 @@ const ViewAllButton = styled(Button)(({ theme }) => ({
 }));
 
 // Sample HSN data
-const sampleHSNs = [
+const initialHSNs = [
   {
     id: 1,
     hsnNo: '6605',
@@ -66,10 +65,15 @@ const sampleHSNs = [
 export default function HSNList() {
   const [searchTerm, setSearchTerm] = useState('');
   const [isAddHSNOpen, setIsAddHSNOpen] = useState(false);
-  const [hsns] = useState(sampleHSNs);
+  const [hsns, setHSNs] = useState(initialHSNs);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
+  };
+
+  const handleAddHSN = (newHSN) => {
+    setHSNs([...hsns, { ...newHSN, id: Date.now() }]);
+    setIsAddHSNOpen(false);
   };
 
   const filteredHSNs = hsns.filter(hsn =>
@@ -152,7 +156,7 @@ export default function HSNList() {
         maxWidth="sm"
         fullWidth
       >
-        <AddHSN onClose={() => setIsAddHSNOpen(false)} />
+        <AddHSN onClose={() => setIsAddHSNOpen(false)} onAdd={handleAddHSN} />
       </Dialog>
     </Container>
   );

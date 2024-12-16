@@ -8,12 +8,11 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Paper,
   Button,
   IconButton,
   TextField,
   Dialog,
-  Grid,
+  Grid2,
   Card,
   CardContent,
 } from '@mui/material';
@@ -22,8 +21,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import PrintIcon from '@mui/icons-material/Print';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import AddIcon from '@mui/icons-material/Add';
-import CreateInvoice from './CreateInvoice';
-import PrintInvoice from './PrintInvoice';
+import CreateInvoice from './Invoice/CreateInvoice';
+import PrintInvoice from './Invoice/PrintInvoice';
 
 export default function SalesReport() {
   const [fromDate, setFromDate] = useState('');
@@ -63,8 +62,8 @@ export default function SalesReport() {
 
   return (
     <Box sx={{ p: 3, maxWidth: 1200, margin: 'auto' }}>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
+      <Grid2 container spacing={3}>
+        <Grid2 size={{ xs: 12}}>
           <Typography
             variant="h4"
             sx={{
@@ -75,22 +74,22 @@ export default function SalesReport() {
           >
             Sales Report
           </Typography>
-        </Grid>
+        </Grid2>
 
-        <Grid item xs={12} md={3}>
+        <Grid2 size={{ xs: 12, md: 3 }}>
           <TextField
             fullWidth
             label="From Date"
             type="date"
             value={fromDate}
             onChange={(e) => setFromDate(e.target.value)}
-            InputLabelProps={{
+            InputLabelProps2={{
               shrink: true,
             }}
             size="small"
           />
-        </Grid>
-        <Grid item xs={12} md={3}>
+        </Grid2>
+        <Grid2  size={{ xs: 12, md: 3 }}>
           <TextField
             fullWidth
             label="To Date"
@@ -102,8 +101,8 @@ export default function SalesReport() {
             }}
             size="small"
           />
-        </Grid>
-        <Grid item xs={12} md={3}>
+        </Grid2>
+        <Grid2  size={{ xs: 12, md: 3 }}>
           <Button
             fullWidth
             variant="contained"
@@ -115,8 +114,8 @@ export default function SalesReport() {
           >
             Export Excel
           </Button>
-        </Grid>
-        <Grid item xs={12} md={3}>
+        </Grid2>
+        <Grid2  size={{ xs: 12, md: 3 }}>
           <Button
             fullWidth
             variant="contained"
@@ -129,9 +128,9 @@ export default function SalesReport() {
           >
             Create Invoice
           </Button>
-        </Grid>
+        </Grid2>
 
-        <Grid item xs={12}>
+        <Grid2  size={{ xs: 12}}>
           <Card elevation={3}>
             <CardContent>
               <TableContainer>
@@ -174,8 +173,8 @@ export default function SalesReport() {
               </TableContainer>
             </CardContent>
           </Card>
-        </Grid>
-      </Grid>
+        </Grid2>
+      </Grid2>
 
       <Dialog
         open={isCreateInvoiceOpen}

@@ -7,6 +7,7 @@ import {
   ListItemText,
   Box,
   Typography,
+  Collapse,
 } from '@mui/material';
 import {
   Dashboard as DashboardIcon,
@@ -18,6 +19,9 @@ import {
   Description as InvoiceIcon,
   Assessment as StockIcon,
   Person as ProfileIcon,
+  Vaccines as VaccinesIcon,
+  ExpandLess,
+  ExpandMore,
 } from '@mui/icons-material';
 
 const drawerWidth = 240;
@@ -31,7 +35,11 @@ const menuItems = [
     text: 'Inventory', 
     icon: <InventoryIcon />, 
     page: 'inventory',
-    subItems: ['List of Medicine', 'List Non Medicine'] 
+    subItems: [
+      { text: '> List of Medicine', icon:<VaccinesIcon/>, page: 'medicinelist' },
+      { text: '> List Non Medicine', page: 'nonmedicinelist' },
+      
+    ] 
   },
   { text: 'Sales', icon: <SalesIcon />, page: 'sales' },
   { text: 'Purchase', icon: <PurchasesIcon />, page: 'purchase' },
@@ -41,6 +49,12 @@ const menuItems = [
 ];
 
 const Sidebar = ({ onPageChange }) => {
+  const [openInventory, setOpenInventory] = React.useState(false);
+
+  const handleInventoryClick = () => {
+    setOpenInventory(!openInventory);
+  };
+
   return (
     <Drawer
       variant="permanent"
@@ -56,7 +70,7 @@ const Sidebar = ({ onPageChange }) => {
       }}
     >
       <Box sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
-        <img src="/placeholder.svg" alt="RIMS IND Logo" width={40} height={40} />
+        <img src="https://res.cloudinary.com/dyju8awcu/image/upload/v1734348727/White-Rims-Logo_de6dus.png" alt="RIMS IND Logo" width={45} height={40} />
         <Box>
           <Typography variant="h6" component="div">
             RIMS IND
@@ -71,10 +85,9 @@ const Sidebar = ({ onPageChange }) => {
         {menuItems.map((item) => (
           <React.Fragment key={item.text}>
             <ListItem 
-              component="a" 
-              onClick={() => onPageChange(item.page)}
+              button
+              onClick={item.subItems ? handleInventoryClick : () => onPageChange(item.page)}
               sx={{ 
-                cursor: 'pointer',
                 '&:hover': {
                   bgcolor: 'rgba(255, 255, 255, 0.08)',
                 },
@@ -84,26 +97,34 @@ const Sidebar = ({ onPageChange }) => {
                 {item.icon}
               </ListItemIcon>
               <ListItemText primary={item.text} />
+              {item.subItems && (openInventory ? <ExpandLess /> : <ExpandMore />)}
             </ListItem>
-            {item.subItems?.map((subItem) => (
-              <ListItem 
-                key={subItem}
-                sx={{ 
-                  pl: 4,
-                  cursor: 'pointer',
-                  '&:hover': {
-                    bgcolor: 'rgba(255, 255, 255, 0.08)',
-                  },
-                }}
-              >
-                <ListItemText 
-                  primary={subItem}
-                  primaryTypographyProps={{
-                    fontSize: '0.875rem',
-                  }}
-                />
-              </ListItem>
-            ))}
+            {item.subItems && (
+              <Collapse in={openInventory} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                  {item.subItems.map((subItem) => (
+                    <ListItem 
+                      button
+                      key={subItem.text}
+                      onClick={() => onPageChange(subItem.page)}
+                      sx={{ 
+                        pl: 4,
+                        '&:hover': {
+                          bgcolor: 'rgba(255, 255, 255, 0.08)',
+                        },
+                      }}
+                    >
+                      <ListItemText 
+                        primary={subItem.text}
+                        primaryTypographyProps2={{
+                          fontSize: '0.875rem',
+                        }}
+                      />
+                    </ListItem>
+                  ))}
+                </List>
+              </Collapse>
+            )}
           </React.Fragment>
         ))}
       </List>

@@ -4,8 +4,7 @@ import {
   TextField,
   Button,
   Typography,
-  Paper,
-  Grid,
+  Grid2,
   IconButton,
   Container,
   Divider,
@@ -71,8 +70,8 @@ const ProfileForm = () => {
 
         <form onSubmit={handleSubmit}>
           <SectionCard title="Business Details" icon={<Business color="primary" />}>
-            <Grid container spacing={3}>
-              <Grid item xs={12}>
+            <Grid2 container spacing={3}>
+              <Grid2 size={{ xs: 12 }}>
                 <TextField
                   fullWidth
                   label="Business Name"
@@ -81,8 +80,8 @@ const ProfileForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                 />
-              </Grid>
-              <Grid item xs={12} md={6}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, md: 6 }}>
                 <TextField
                   fullWidth
                   label="Type Of Business"
@@ -91,8 +90,8 @@ const ProfileForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                 />
-              </Grid>
-              <Grid item xs={12} md={6}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, md: 6 }}>
                 <TextField
                   fullWidth
                   label="GST Number"
@@ -101,8 +100,8 @@ const ProfileForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                 />
-              </Grid>
-              <Grid item xs={12} md={6}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, md: 6 }}>
                 <TextField
                   fullWidth
                   label="DL Number"
@@ -111,8 +110,8 @@ const ProfileForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                 />
-              </Grid>
-              <Grid item xs={12} md={6}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, md: 6 }}>
                 <TextField
                   fullWidth
                   label="PAN Number"
@@ -121,13 +120,13 @@ const ProfileForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                 />
-              </Grid>
-            </Grid>
+              </Grid2>
+            </Grid2>
           </SectionCard>
 
           <SectionCard title="Contact Information" icon={<Phone color="primary" />}>
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={6}>
+            <Grid2 container spacing={3}>
+              <Grid2 size={{ xs: 12, md: 6 }}>
                 <TextField
                   fullWidth
                   label="Mobile Number"
@@ -136,8 +135,8 @@ const ProfileForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                 />
-              </Grid>
-              <Grid item xs={12} md={6}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, md: 6 }}>
                 <TextField
                   fullWidth
                   label="Alternative Mobile Number"
@@ -146,8 +145,8 @@ const ProfileForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                 />
-              </Grid>
-              <Grid item xs={12} md={6}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, md: 6 }}>
                 <TextField
                   fullWidth
                   label="Email"
@@ -157,8 +156,8 @@ const ProfileForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                 />
-              </Grid>
-              <Grid item xs={12} md={6}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, md: 6 }}>
                 <TextField
                   fullWidth
                   label="Website"
@@ -167,13 +166,13 @@ const ProfileForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                 />
-              </Grid>
-            </Grid>
+              </Grid2>
+            </Grid2>
           </SectionCard>
 
           <SectionCard title="Address" icon={<Home color="primary" />}>
-            <Grid container spacing={3}>
-              <Grid item xs={12}>
+            <Grid2 container spacing={3}>
+              <Grid2 size={{ xs: 12}}>
                 <TextField
                   fullWidth
                   label="Address Line 1"
@@ -182,8 +181,8 @@ const ProfileForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                 />
-              </Grid>
-              <Grid item xs={12}>
+              </Grid2>
+              <Grid2 size={{ xs: 12}}>
                 <TextField
                   fullWidth
                   label="Address Line 2"
@@ -192,8 +191,8 @@ const ProfileForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                 />
-              </Grid>
-              <Grid item xs={12} md={6}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, md: 6 }}>
                 <TextField
                   fullWidth
                   label="District"
@@ -202,8 +201,8 @@ const ProfileForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                 />
-              </Grid>
-              <Grid item xs={12} md={6}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, md: 6 }}>
                 <TextField
                   fullWidth
                   label="State"
@@ -212,8 +211,8 @@ const ProfileForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                 />
-              </Grid>
-              <Grid item xs={12} md={6}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, md: 6 }}>
                 <TextField
                   fullWidth
                   label="Country"
@@ -222,8 +221,8 @@ const ProfileForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                 />
-              </Grid>
-              <Grid item xs={12} md={6}>
+              </Grid2>
+              <Grid2 size={{ xs: 12, md: 4 }}>
                 <TextField
                   fullWidth
                   label="Pincode"
@@ -232,8 +231,8 @@ const ProfileForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                 />
-              </Grid>
-            </Grid>
+              </Grid2>
+            </Grid2>
           </SectionCard>
 
           <SectionCard title="Profile Picture" icon={<Person color="primary" />}>

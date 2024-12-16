@@ -4,7 +4,7 @@ import {
   TextField,
   Typography,
   MenuItem,
-  Grid,
+  Grid2,
   Button,
   DialogTitle,
   DialogContent,
@@ -80,8 +80,8 @@ export default function AddCustomer({ onClose }) {
       </DialogTitle>
       <DialogContent dividers>
         <form id="add-customer-form" onSubmit={handleSubmit}>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={8}>
+          <Grid2 container spacing={3}>
+            <Grid2 size={{ xs: 12, md: 8 }}>
               <TextField
                 fullWidth
                 name="phoneNo"
@@ -90,15 +90,15 @@ export default function AddCustomer({ onClose }) {
                 value={formData.phoneNo}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <CardValue>
                 Card Value - 0
               </CardValue>
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <TextField
                 fullWidth
                 name="firstName"
@@ -107,9 +107,9 @@ export default function AddCustomer({ onClose }) {
                 value={formData.firstName}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <TextField
                 fullWidth
                 name="midName"
@@ -118,9 +118,9 @@ export default function AddCustomer({ onClose }) {
                 value={formData.midName}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <TextField
                 fullWidth
                 name="lastName"
@@ -129,9 +129,9 @@ export default function AddCustomer({ onClose }) {
                 value={formData.lastName}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={8}>
+            <Grid2 size={{ xs: 12, md: 8 }}>
               <TextField
                 fullWidth
                 name="gst"
@@ -140,9 +140,9 @@ export default function AddCustomer({ onClose }) {
                 value={formData.gst}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <TextField
                 fullWidth
                 select
@@ -158,9 +158,9 @@ export default function AddCustomer({ onClose }) {
                   </MenuItem>
                 ))}
               </TextField>
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12}>
+            <Grid2 size={{ xs: 12}}>
               <TextField
                 fullWidth
                 multiline
@@ -171,8 +171,8 @@ export default function AddCustomer({ onClose }) {
                 value={formData.address}
                 onChange={handleInputChange}
               />
-            </Grid>
-          </Grid>
+            </Grid2>
+          </Grid2>
         </form>
       </DialogContent>
       <DialogActions>

@@ -3,7 +3,7 @@ import {
   Box,
   TextField,
   Typography,
-  Grid,
+  Grid2,
   Button,
   Select,
   MenuItem,
@@ -11,10 +11,10 @@ import {
   Dialog,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import AddHSN from './AddHSN';
+import AddHSN from '../HSN/AddHSN';
 
 const HeaderBox = styled(Box)({
-  backgroundColor: '#FF5722',
+  backgroundColor: '#229cff',
   color: 'white',
   padding: '20px',
   borderTopLeftRadius: '4px',
@@ -85,8 +85,8 @@ export default function ProductEntry({ onClose }) {
       
       <DialogContent>
         <form id="product-entry-form" onSubmit={handleSubmit}>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
+          <Grid2 container spacing={3}>
+            <Grid2 size={{ xs: 12}}>
               <StyledTextField
                 fullWidth
                 name="productName"
@@ -95,9 +95,9 @@ export default function ProductEntry({ onClose }) {
                 value={formData.productName}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <StyledTextField
                 fullWidth
                 name="pack"
@@ -106,9 +106,9 @@ export default function ProductEntry({ onClose }) {
                 value={formData.pack}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <StyledTextField
                 fullWidth
                 name="type"
@@ -117,9 +117,9 @@ export default function ProductEntry({ onClose }) {
                 value={formData.type}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <StyledTextField
                 fullWidth
                 name="quantity"
@@ -129,9 +129,9 @@ export default function ProductEntry({ onClose }) {
                 value={formData.quantity}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={8}>
+            <Grid2 size={{ xs: 12, md: 8 }}>
               <Select
                 fullWidth
                 name="hsn"
@@ -144,9 +144,9 @@ export default function ProductEntry({ onClose }) {
                 <MenuItem disabled value="">HSN</MenuItem>
                 <MenuItem value="3004">3004</MenuItem>
               </Select>
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <Button
                 fullWidth
                 variant="contained"
@@ -160,9 +160,9 @@ export default function ProductEntry({ onClose }) {
               >
                 Add HSN
               </Button>
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <StyledTextField
                 fullWidth
                 name="batchCode"
@@ -171,9 +171,9 @@ export default function ProductEntry({ onClose }) {
                 value={formData.batchCode}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <StyledTextField
                 fullWidth
                 name="mfr"
@@ -182,9 +182,9 @@ export default function ProductEntry({ onClose }) {
                 value={formData.mfr}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <StyledTextField
                 fullWidth
                 name="expDate"
@@ -193,9 +193,9 @@ export default function ProductEntry({ onClose }) {
                 value={formData.expDate}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <StyledTextField
                 fullWidth
                 name="mrp"
@@ -205,9 +205,9 @@ export default function ProductEntry({ onClose }) {
                 value={formData.mrp}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <StyledTextField
                 fullWidth
                 name="rate"
@@ -217,9 +217,9 @@ export default function ProductEntry({ onClose }) {
                 value={formData.rate}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={4}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <StyledTextField
                 fullWidth
                 name="taxableAmt"
@@ -229,9 +229,9 @@ export default function ProductEntry({ onClose }) {
                 value={formData.taxableAmt}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={6}>
+            <Grid2 size={{ xs: 12, md: 6 }}>
               <StyledTextField
                 fullWidth
                 name="discount"
@@ -241,9 +241,9 @@ export default function ProductEntry({ onClose }) {
                 value={formData.discount}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={6}>
+            <Grid2 size={{ xs: 12, md: 6 }}>
               <StyledTextField
                 fullWidth
                 name="gst"
@@ -253,9 +253,9 @@ export default function ProductEntry({ onClose }) {
                 value={formData.gst}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12}>
+            <Grid2 size={{ xs: 12}}>
               <StyledTextField
                 fullWidth
                 name="totalAmount"
@@ -265,8 +265,8 @@ export default function ProductEntry({ onClose }) {
                 value={formData.totalAmount}
                 onChange={handleInputChange}
               />
-            </Grid>
-          </Grid>
+            </Grid2>
+          </Grid2>
 
           <Box sx={{ mt: 3, textAlign: 'center' }}>
             <Button

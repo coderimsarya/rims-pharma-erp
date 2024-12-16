@@ -3,7 +3,7 @@ import {
   Box,
   TextField,
   Typography,
-  Grid,
+  Grid2,
   Button,
   DialogContent,
   DialogActions,
@@ -11,7 +11,7 @@ import {
 import { styled } from '@mui/material/styles';
 
 const HeaderBox = styled(Box)({
-  backgroundColor: '#FF5722',
+  backgroundColor: '#22aeff',
   color: 'white',
   padding: '20px',
   borderTopLeftRadius: '4px',
@@ -66,14 +66,14 @@ export default function AddVendor({ onClose }) {
   return (
     <>
       <HeaderBox>
-        <Typography variant="h6">Add New Vendor</Typography>
+        <Typography variant="h4">Add New Vendor</Typography>
       </HeaderBox>
       
       <DialogContent>
         <form id="add-vendor-form" onSubmit={handleSubmit}>
           <SectionTitle>Vendor Details</SectionTitle>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={4}>
+          <Grid2 container spacing={3}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <TextField
                 fullWidth
                 name="firstName"
@@ -82,8 +82,8 @@ export default function AddVendor({ onClose }) {
                 value={formData.firstName}
                 onChange={handleInputChange}
               />
-            </Grid>
-            <Grid item xs={12} md={4}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <TextField
                 fullWidth
                 name="midName"
@@ -92,8 +92,8 @@ export default function AddVendor({ onClose }) {
                 value={formData.midName}
                 onChange={handleInputChange}
               />
-            </Grid>
-            <Grid item xs={12} md={4}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <TextField
                 fullWidth
                 name="lastName"
@@ -102,9 +102,9 @@ export default function AddVendor({ onClose }) {
                 value={formData.lastName}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={6}>
+            <Grid2 size={{ xs: 12, md: 6 }}>
               <TextField
                 fullWidth
                 name="phoneNumber"
@@ -113,8 +113,8 @@ export default function AddVendor({ onClose }) {
                 value={formData.phoneNumber}
                 onChange={handleInputChange}
               />
-            </Grid>
-            <Grid item xs={12} md={6}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, md: 6 }}>
               <TextField
                 fullWidth
                 name="altPhoneNumber"
@@ -123,9 +123,9 @@ export default function AddVendor({ onClose }) {
                 value={formData.altPhoneNumber}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12}>
+            <Grid2 size={{ xs: 12 }}>
               <TextField
                 fullWidth
                 multiline
@@ -136,12 +136,12 @@ export default function AddVendor({ onClose }) {
                 value={formData.address}
                 onChange={handleInputChange}
               />
-            </Grid>
-          </Grid>
+            </Grid2>
+          </Grid2>
 
           <SectionTitle>Business Details</SectionTitle>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
+          <Grid2 container spacing={3}>
+            <Grid2 size={{ xs: 12 }}>
               <TextField
                 fullWidth
                 name="businessName"
@@ -150,9 +150,9 @@ export default function AddVendor({ onClose }) {
                 value={formData.businessName}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={6}>
+            <Grid2 size={{ xs: 12, md: 6 }}>
               <TextField
                 fullWidth
                 name="typeOfBusiness"
@@ -161,8 +161,8 @@ export default function AddVendor({ onClose }) {
                 value={formData.typeOfBusiness}
                 onChange={handleInputChange}
               />
-            </Grid>
-            <Grid item xs={12} md={6}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, md: 6 }}>
               <TextField
                 fullWidth
                 name="gstNumber"
@@ -171,9 +171,9 @@ export default function AddVendor({ onClose }) {
                 value={formData.gstNumber}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} md={6}>
+            <Grid2 size={{ xs: 12, md: 6 }}>
               <TextField
                 fullWidth
                 name="dlNumber"
@@ -182,8 +182,8 @@ export default function AddVendor({ onClose }) {
                 value={formData.dlNumber}
                 onChange={handleInputChange}
               />
-            </Grid>
-            <Grid item xs={12} md={6}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, md: 6 }}>
               <TextField
                 fullWidth
                 name="panNumber"
@@ -192,9 +192,9 @@ export default function AddVendor({ onClose }) {
                 value={formData.panNumber}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12}>
+            <Grid2 size={{ xs: 12 }}>
               <TextField
                 fullWidth
                 name="mobileNumber"
@@ -203,9 +203,9 @@ export default function AddVendor({ onClose }) {
                 value={formData.mobileNumber}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12}>
+            <Grid2 size={{ xs: 12 }}>
               <TextField
                 fullWidth
                 name="email"
@@ -215,9 +215,9 @@ export default function AddVendor({ onClose }) {
                 value={formData.email}
                 onChange={handleInputChange}
               />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12}>
+            <Grid2 size={{ xs: 12 }}>
               <TextField
                 fullWidth
                 multiline
@@ -228,11 +228,11 @@ export default function AddVendor({ onClose }) {
                 value={formData.companyAddress}
                 onChange={handleInputChange}
               />
-            </Grid>
-          </Grid>
+            </Grid2>
+          </Grid2>
 
           <VendorCode>
-            Vendor Code - RETA24002 ( Auto generated Vendor Code is Random - "RETA" is fixed )
+            Vendor Code - RETA24002 
           </VendorCode>
         </form>
       </DialogContent>

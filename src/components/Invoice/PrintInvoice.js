@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import {
   Box,
   Typography,
@@ -12,30 +12,22 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useReactToPrint } from 'react-to-print';
-import ReactToPdf from 'react-to-pdf';
 
-const PrintContainer = styled(Box)(({ theme }) => ({
-  width: '210mm',
-  minHeight: '297mm',
+const PrintContainer = styled(Box)({
+  width: '210mm', // A4 width
+  height: '148.5mm', // A4 half-height
   padding: '10mm',
   margin: '0 auto',
   backgroundColor: 'white',
   boxShadow: '0 0 10px rgba(0,0,0,0.1)',
-  fontSize: '10px',
-  [theme.breakpoints.down('sm')]: {
-    width: '100%',
+  fontSize: '10px', // Reduce base font size
+  '@media print': {
+    boxShadow: 'none',
     padding: '5mm',
   },
-  '@media print': {
-    width: '210mm',
-    height: '297mm',
-    pageBreakAfter: 'always',
-    boxShadow: 'none',
-    padding: '0',
-  },
-}));
+});
 
-const StyledTable = styled(Table)(({ theme }) => ({
+const StyledTable = styled(Table)({
   '& .MuiTableCell-root': {
     padding: '2px 4px',
     fontSize: '8px',
@@ -45,54 +37,27 @@ const StyledTable = styled(Table)(({ theme }) => ({
     fontWeight: 'bold',
     backgroundColor: '#f5f5f5',
   },
-  '@media print': {
-    fontSize: '8px',
-    '& .MuiTableCell-root': {
-      padding: '1px 2px',
-    },
-  },
-}));
+});
 
 export default function PrintInvoice({ invoice }) {
   const componentRef = useRef();
-  const pdfRef = useRef();
-  const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
 
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
-    documentTitle: 'Invoice',
-    onBeforeGetContent: () => {
-      return new Promise((resolve) => {
-        console.log("Preparing print content...");
-        resolve();
-      });
-    },
-    onAfterPrint: () => console.log('Printed successfully'),
   });
 
   return (
     <Box sx={{ p: 1.5 }}>
-      <Box sx={{ display: 'flex', gap: 2, mb: 1 }}>
-        <Button
-          variant="contained"
-          onClick={handlePrint}
-        >
-          Print Invoice
-        </Button>
-        <ReactToPdf targetRef={pdfRef} filename="invoice.pdf">
-          {({ toPdf }) => (
-            <Button
-              variant="contained"
-              onClick={toPdf}
-              disabled={isGeneratingPdf}
-            >
-              {isGeneratingPdf ? 'Generating PDF...' : 'Download as PDF'}
-            </Button>
-          )}
-        </ReactToPdf>
-      </Box>
+      {/* The following lines were removed as per update 1 and 2 */}
+      <Button
+        variant="contained"
+        onClick={handlePrint}
+        sx={{ mb: 1 }}
+      >
+        Print Invoice
+      </Button>
 
-      <PrintContainer ref={componentRef} id="invoice-container">
+      <PrintContainer ref={componentRef}>
         {/* Header */}
         <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
           <Box>
@@ -180,6 +145,7 @@ export default function PrintInvoice({ invoice }) {
                 <TableCell>6.00</TableCell>
                 <TableCell>312.00</TableCell>
               </TableRow>
+              {/* Empty rows for spacing */}
               {[...Array(5)].map((_, index) => (
                 <TableRow key={index}>
                   {[...Array(13)].map((_, cellIndex) => (
@@ -240,3 +206,4 @@ export default function PrintInvoice({ invoice }) {
     </Box>
   );
 }
+

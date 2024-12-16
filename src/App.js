@@ -3,12 +3,15 @@ import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 //import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import ProfileForm from './components/ProfileForm';
-import CustomerList from './components/CustomerList';
-import HSNList from './components/HSNList';
-import VendorList from './components/VendorList';
-import PurchaseList from './components/PurchaseList';
+import CustomerList from './components/Customer/CustomerList';
+import HSNList from './components/HSN/HSNList';
+import VendorList from './components/Vendor/VendorList';
+import PurchaseList from './components/Purchase/PurchaseList';
 import Sidebar from './components/Sidebar';
 import SalesReport from './components/SalesReport';
+//import Inventory from './components/Inventory';
+import MedicineList from './components/Inventory/MedicineList';
+import NonMedicineList from './components/Inventory/NonMedicineList';
 import { Box } from '@mui/material';
 
 const theme = createTheme({
@@ -65,8 +68,12 @@ function App() {
           return <HSNList />;
         case'invoice':
           return <SalesReport />;
-      
-      // Add other cases for different pages as needed
+          case 'medicinelist':
+            return <MedicineList />;
+        case 'nonmedicinelist':
+          return <NonMedicineList />;
+            
+            
       default:
         return <Dashboard />;
     }
@@ -77,7 +84,9 @@ function App() {
       <CssBaseline />
       <Box sx={{ display: 'flex' }}>
         <Sidebar onPageChange={handlePageChange} />
-        {renderPage()}
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          {renderPage()}
+        </Box>
       </Box>
     </ThemeProvider>
   );

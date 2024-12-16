@@ -3,7 +3,7 @@ import {
   Box,
   Card,
   CardContent,
-  Grid,
+  Grid2,
   Typography,
   Button,
 } from '@mui/material';
@@ -26,14 +26,14 @@ const Dashboard = () => {
   return (
     <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
       {/* Pharmacy Info Card */}
-      <Card sx={{ mb: 4, bgcolor: '#004d61', color: 'white' }}>
+      <Card sx={{ mb: 3, bgcolor: '#004d61', color: 'white' }}>
         <CardContent>
-          <Grid container spacing={2} alignItems="center">
-            <Grid item xs={12} md={3}>
+          <Grid2 container spacing={2} alignItems="center">
+            <Grid2 size={{ xs: 12, md: 2 }}>
               <Box
                 sx={{
-                  width: 150,
-                  height: 150,
+                  width: 200,
+                  height: 200,
                   bgcolor: 'white',
                   borderRadius: 1,
                   display: 'flex',
@@ -43,8 +43,8 @@ const Dashboard = () => {
               >
                 Profile Picture
               </Box>
-            </Grid>
-            <Grid item xs={12} md={9}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, md: 6 }}>
               <Typography variant="h5" gutterBottom>
                 Retar Mediserve Private Limited
               </Typography>
@@ -54,15 +54,15 @@ const Dashboard = () => {
               <Typography>Address: Medinipur, Mahatabpur</Typography>
               <Typography>Call: 9749431711</Typography>
               <Typography>Email: rimsmedipur@gmail.com</Typography>
-            </Grid>
-          </Grid>
+            </Grid2>
+          </Grid2>
         </CardContent>
       </Card>
 
       {/* Statistics Cards */}
-      <Grid container spacing={2} sx={{ mb: 4 }}>
+      <Grid2 container spacing={2} sx={{ mb: 4 }}>
         {statsData.map((stat, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
+          <Grid2 size={{ xs: 12, sm:6, md: 3 }} key={index}>
             <Card sx={{ bgcolor: stat.color, color: 'white' }}>
               <CardContent>
                 <Typography variant="h4">{stat.amount}</Typography>
@@ -70,14 +70,14 @@ const Dashboard = () => {
                 <Typography variant="caption">This Month</Typography>
               </CardContent>
             </Card>
-          </Grid>
+          </Grid2>
         ))}
-      </Grid>
+      </Grid2>
 
       {/* Report Cards */}
-      <Grid container spacing={2} sx={{ mb: 4 }}>
+      <Grid2 container spacing={2} sx={{ mb: 4 }}>
         {reportsData.map((report, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
+          <Grid2 size={{ xs: 12, sm:6, md: 3 }} key={index}>
             <Card sx={{ border: `1px solid ${report.color}` }}>
               <CardContent>
                 <Typography
@@ -88,9 +88,9 @@ const Dashboard = () => {
                 </Typography>
               </CardContent>
             </Card>
-          </Grid>
+          </Grid2>
         ))}
-      </Grid>
+      </Grid2>
 
       {/* Create Invoice Button */}
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
