@@ -10,20 +10,20 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-const HeaderBox = styled(Box)({
-  backgroundColor: '#22aeff',
-  color: 'white',
-  padding: '20px',
-  borderTopLeftRadius: '4px',
-  borderTopRightRadius: '4px',
-});
+const HeaderBox = styled(Box)`
+  background-color: #22aeff;
+  color: white;
+  padding: 20px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+`;
 
-const SectionTitle = styled(Typography)({
-  color: '#00B0F0',
-  fontSize: '1.2rem',
-  marginBottom: '20px',
-  marginTop: '20px',
-});
+const SectionTitle = styled(Typography)`
+  color: #00B0F0;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
+`
 
 const VendorCode = styled(Typography)({
   color: '#666',
@@ -66,7 +66,7 @@ export default function AddVendor({ onClose }) {
   return (
     <>
       <HeaderBox>
-        <Typography variant="h4">Add New Vendor</Typography>
+        <Typography variant="h6">Add New Vendor</Typography>
       </HeaderBox>
       
       <DialogContent>

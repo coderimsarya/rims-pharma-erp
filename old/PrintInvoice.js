@@ -12,7 +12,6 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useReactToPrint } from 'react-to-print';
-import { useNavigate } from 'react-router-dom';
 
 const PrintContainer = styled(Box)({
   width: '210mm', // A4 width
@@ -42,19 +41,13 @@ const StyledTable = styled(Table)({
 
 export default function PrintInvoice({ invoice }) {
   const componentRef = useRef();
-  const navigate = useNavigate();
 
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
 
-  const handleExportToPDF = () => {
-    navigate('pdf-export', { state: { invoice } });
-  };
-
   return (
     <Box sx={{ p: 1.5 }}>
-      <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
       {/* The following lines were removed as per update 1 and 2 */}
       <Button
         variant="contained"
@@ -63,14 +56,6 @@ export default function PrintInvoice({ invoice }) {
       >
         Print Invoice
       </Button>
-      <Button
-        variant="contained"
-        onClick={handleExportToPDF}
-        sx={{ mb: 1 }}
-      >
-        Print Invoice
-      </Button>
-      </Box>
 
       <PrintContainer ref={componentRef}>
         {/* Header */}

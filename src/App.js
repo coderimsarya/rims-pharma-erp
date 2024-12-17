@@ -13,6 +13,7 @@ import SalesReport from './components/SalesReport';
 import MedicineList from './components/Inventory/MedicineList';
 import NonMedicineList from './components/Inventory/NonMedicineList';
 import OrderList from './components/Order/OrderList';
+import PDFExport from './components/Invoice/PDFExport';
 import { Box } from '@mui/material';
 
 const theme = createTheme({
@@ -75,6 +76,8 @@ function App() {
           return <NonMedicineList />;
           case 'order':
             return <OrderList />;
+            case 'pdf-export':
+              return <PDFExport />;
             
       default:
         return <Dashboard />;
