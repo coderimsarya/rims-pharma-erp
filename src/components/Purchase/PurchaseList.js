@@ -153,7 +153,7 @@ export default function PurchaseList() {
           <TableContainer component={Paper}>
             <Table>
               <TableHead>
-                <TableRow sx={{ bgcolor: '#428BCA', '& > *': { color: 'white' } }}>
+                <TableRow sx={{ bgcolor: '#428BCA', '& > *': { color: '#FFFFFF' } }}>
                   <TableCell>Vcod</TableCell>
                   <TableCell>Qty</TableCell>
                   <TableCell>Pack</TableCell>

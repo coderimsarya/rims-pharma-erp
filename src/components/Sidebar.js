@@ -20,6 +20,7 @@ import {
   Assessment as StockIcon,
   Person as ProfileIcon,
   Vaccines as VaccinesIcon,
+  ShoppingCart as OrderIcon,
   ExpandLess,
   ExpandMore,
 } from '@mui/icons-material';
@@ -38,9 +39,9 @@ const menuItems = [
     subItems: [
       { text: '> List of Medicine', icon:<VaccinesIcon/>, page: 'medicinelist' },
       { text: '> List Non Medicine', page: 'nonmedicinelist' },
-      
     ] 
   },
+  { text: 'Order', icon: <OrderIcon />, page: 'order' },
   { text: 'Sales', icon: <SalesIcon />, page: 'sales' },
   { text: 'Purchase', icon: <PurchasesIcon />, page: 'purchase' },
   { text: 'Invoice', icon: <InvoiceIcon />, page: 'invoice' },
@@ -116,7 +117,7 @@ const Sidebar = ({ onPageChange }) => {
                     >
                       <ListItemText 
                         primary={subItem.text}
-                        primaryTypographyProps2={{
+                        primaryTypographyProps={{
                           fontSize: '0.875rem',
                         }}
                       />
