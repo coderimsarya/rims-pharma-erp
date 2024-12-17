@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.table-row {
+  background-color: #428BCA;
+}
+
+.table-cell {
+  color: white;
+}

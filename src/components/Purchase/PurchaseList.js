@@ -4,7 +4,6 @@ import {
   Container,
   Paper,
   Typography,
-  //TextField,
   Button,
   Table,
   TableBody,
@@ -15,7 +14,7 @@ import {
   Dialog,
   Select,
   MenuItem,
-  Grid,
+  Grid2,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Add, ExitToApp } from '@mui/icons-material';
@@ -92,8 +91,8 @@ export default function PurchaseList() {
         <StyledPaper>
           <Title>Purchase Entry</Title>
           
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={9}>
+          <Grid2 container spacing={2}>
+            <Grid2 size={{ xs: 12, md: 9 }}>
               <Select
                 fullWidth
                 value={selectedVendor}
@@ -102,20 +101,20 @@ export default function PurchaseList() {
                 sx={{
                   backgroundColor: 'white',
                   '& .MuiOutlinedInput-notchedOutline': {
-                    borderColor: '#FF5722',
+                    borderColor: '#f7fafc',
                   },
                 }}
               >
                 <MenuItem disabled value="">Select Vendor</MenuItem>
                 <MenuItem value="vendor1">NC Medical Store</MenuItem>
               </Select>
-            </Grid>
-            <Grid item xs={12} md={3}>
+            </Grid2>
+            <Grid2 size={{ xs: 12, md: 2 }}>
               <Button
                 fullWidth
                 variant="contained"
                 sx={{
-                  bgcolor: '#FF5722',
+                  bgcolor: '#22a3ff',
                   '&:hover': {
                     bgcolor: '#F4511E',
                   },
@@ -123,8 +122,8 @@ export default function PurchaseList() {
               >
                 Add Vendor
               </Button>
-            </Grid>
-          </Grid>
+            </Grid2>
+          </Grid2>
 
           <VendorDetails>
             <Typography variant="subtitle1" gutterBottom>NC Medical Store</Typography>
@@ -154,7 +153,7 @@ export default function PurchaseList() {
           <TableContainer component={Paper}>
             <Table>
               <TableHead>
-                <TableRow sx={{ bgcolor: '#E0E0E0' }}>
+                <TableRow sx={{ bgcolor: '#428BCA', '& > *': { color: 'white' } }}>
                   <TableCell>Vcod</TableCell>
                   <TableCell>Qty</TableCell>
                   <TableCell>Pack</TableCell>

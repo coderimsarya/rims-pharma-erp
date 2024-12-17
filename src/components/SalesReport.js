@@ -136,7 +136,7 @@ export default function SalesReport() {
               <TableContainer>
                 <Table>
                   <TableHead>
-                    <TableRow sx={{ bgcolor: '#E5E5E5' }}>
+                    <TableRow sx={{ bgcolor: '#428BCA', '& > *': { color: '#FFFFFF' } }}>
                       <TableCell>Invoice No</TableCell>
                       <TableCell>Date</TableCell>
                       <TableCell>Customer Name</TableCell>

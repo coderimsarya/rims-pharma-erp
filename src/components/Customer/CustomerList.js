@@ -82,7 +82,7 @@ export default function CustomerList() {
               value={searchTerm}
               onChange={handleSearchChange}
               InputProps2={{
-                startAdornment: <Search sx={{ color: 'text.secondary', mr: 1 }} />,
+                startAdornment: <Search sx={{ color: 'text.secondary', mr: 2 }} />,
               }}
             />
             <Button
@@ -103,7 +103,7 @@ export default function CustomerList() {
           <TableContainer component={Paper}>
             <Table>
               <TableHead>
-                <TableRow sx={{ bgcolor: '#f5f5f5' }}>
+                <TableRow sx={{ bgcolor: '#428BCA', '& > *': { color: 'white' } }}>
                   <TableCell>Name</TableCell>
                   <TableCell>Phone</TableCell>
                   <TableCell>GST</TableCell>

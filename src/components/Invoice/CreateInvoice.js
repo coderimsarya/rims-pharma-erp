@@ -228,7 +228,7 @@ function CreateInvoice() {
           <TableContainer component={Paper} sx={{ mb: 3 }}>
             <Table size="small">
               <TableHead>
-                <TableRow sx={{ bgcolor: '#f5f5f5' }}>
+                <TableRow sx={{ bgcolor: '#428BCA', '& > *': { color: '#FFFFFF' } }}>
                   <TableCell>Sn.</TableCell>
                   <TableCell>Qty</TableCell>
                   <TableCell>Pack</TableCell>

@@ -119,7 +119,7 @@ export default function HSNList() {
           <TableContainer component={Paper}>
             <Table>
               <TableHead>
-                <TableRow sx={{ bgcolor: '#E0E0E0' }}>
+                <TableRow sx={{ bgcolor: '#428BCA', '& > *': { color: 'white' } }}>
                   <TableCell>HSN No</TableCell>
                   <TableCell>CGST</TableCell>
                   <TableCell>SGST</TableCell>
