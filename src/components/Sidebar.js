@@ -19,41 +19,46 @@ import {
   Description as InvoiceIcon,
   Assessment as StockIcon,
   Person as ProfileIcon,
-  Vaccines as VaccinesIcon,
-  ShoppingCart as OrderIcon,
   ExpandLess,
+  Edit,
   ExpandMore,
 } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
+
 
 const drawerWidth = 240;
 
 const menuItems = [
-  { text: 'Dashboard', icon: <DashboardIcon />, page: 'dashboard' },
-  { text: 'Customers', icon: <CustomersIcon />, page: 'customers' },
-  { text: 'Vendor', icon: <VendorIcon />, page: 'vendor' },
-  { text: 'HSN', icon: <VendorIcon />, page: 'hsn' },
+  { text: 'Dashboard', icon: <DashboardIcon />, path: '/' },
+  { text: 'Customers', icon: <CustomersIcon />, path: '/customers' },
+  { text: 'Vendor', icon: <VendorIcon />, path: '/vendor' },
+  { text: 'HSN', icon: <VendorIcon />, path: '/hsn' },
   { 
     text: 'Inventory', 
     icon: <InventoryIcon />, 
-    page: 'inventory',
     subItems: [
-      { text: '> List of Medicine', icon:<VaccinesIcon/>, page: 'medicinelist' },
-      { text: '> List Non Medicine', page: 'nonmedicinelist' },
+      { text: 'List of Medicine', path: '/medicinelist' },
+      { text: 'List Non Medicine', path: '/nonmedicinelist' }
     ] 
   },
-  { text: 'Order', icon: <OrderIcon />, page: 'order' },
-  { text: 'Sales', icon: <SalesIcon />, page: 'sales' },
-  { text: 'Purchase', icon: <PurchasesIcon />, page: 'purchase' },
-  { text: 'Invoice', icon: <InvoiceIcon />, page: 'invoice' },
-  { text: 'Stock', icon: <StockIcon />, page: 'stock' },
-  { text: 'Profile', icon: <ProfileIcon />, page: 'profile' },
+  { text: 'Sales', icon: <SalesIcon />, path: '/sales' },
+  { text: 'Order', icon: <Edit />, path: '/order' },
+  { text: 'Purchase', icon: <PurchasesIcon />, path: '/purchase' },
+  { text: 'Invoice', icon: <InvoiceIcon />, path: '/invoice' },
+  { text: 'Stock', icon: <StockIcon />, path: '/stock' },
+  { text: 'Profile', icon: <ProfileIcon />, path: '/profile' },
 ];
 
-const Sidebar = ({ onPageChange }) => {
+const Sidebar = () => {
   const [openInventory, setOpenInventory] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleInventoryClick = () => {
     setOpenInventory(!openInventory);
+  };
+
+  const handleNavigation = (path) => {
+    navigate(path);
   };
 
   return (
@@ -71,7 +76,7 @@ const Sidebar = ({ onPageChange }) => {
       }}
     >
       <Box sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
-        <img src="https://res.cloudinary.com/dyju8awcu/image/upload/v1734348727/White-Rims-Logo_de6dus.png" alt="RIMS IND Logo" width={45} height={40} />
+        <img src="/placeholder.svg" alt="RIMS IND Logo" width={40} height={40} />
         <Box>
           <Typography variant="h6" component="div">
             RIMS IND
@@ -87,7 +92,7 @@ const Sidebar = ({ onPageChange }) => {
           <React.Fragment key={item.text}>
             <ListItem 
               button
-              onClick={item.subItems ? handleInventoryClick : () => onPageChange(item.page)}
+              onClick={item.subItems ? handleInventoryClick : () => handleNavigation(item.path)}
               sx={{ 
                 '&:hover': {
                   bgcolor: 'rgba(255, 255, 255, 0.08)',
@@ -107,7 +112,7 @@ const Sidebar = ({ onPageChange }) => {
                     <ListItem 
                       button
                       key={subItem.text}
-                      onClick={() => onPageChange(subItem.page)}
+                      onClick={() => handleNavigation(subItem.path)}
                       sx={{ 
                         pl: 4,
                         '&:hover': {

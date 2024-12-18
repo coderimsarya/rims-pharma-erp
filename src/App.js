@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
-//import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Box } from '@mui/material';
+import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
 import ProfileForm from './components/ProfileForm';
 import CustomerList from './components/Customer/CustomerList';
 import HSNList from './components/HSN/HSNList';
 import VendorList from './components/Vendor/VendorList';
 import PurchaseList from './components/Purchase/PurchaseList';
-import Sidebar from './components/Sidebar';
 import SalesReport from './components/SalesReport';
-//import Inventory from './components/Inventory';
 import MedicineList from './components/Inventory/MedicineList';
 import NonMedicineList from './components/Inventory/NonMedicineList';
 import OrderList from './components/Order/OrderList';
-//import PDFExport from './components/Invoice/PDFExport';
-import { Box } from '@mui/material';
+import PrintInvoice from './components/Invoice/PrintInvoice';
+//import exportToPDF from './components/Invoice/exportToPDF';
 
 const theme = createTheme({
   palette: {
@@ -47,52 +47,35 @@ const theme = createTheme({
     },
   },
 });
+
 function App() {
-  const [currentPage, setCurrentPage] = useState('dashboard');
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'dashboard':
-        return <Dashboard />;
-      case 'profile':
-        return <ProfileForm />;
-        case 'customers':
-        return <CustomerList />;
-        case 'vendor':
-        return <VendorList />;
-        case 'purchase':
-          return <PurchaseList />;
-        case 'hsn':
-          return <HSNList />;
-        case'invoice':
-          return <SalesReport />;
-          case 'medicinelist':
-            return <MedicineList />;
-        case 'nonmedicinelist':
-          return <NonMedicineList />;
-          case 'order':
-            return <OrderList />;
-            
-      default:
-        return <Dashboard />;
-    }
-  };
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ display: 'flex' }}>
-        <Sidebar onPageChange={handlePageChange} />
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          {renderPage()}
+      <Router>
+        <Box sx={{ display: 'flex' }}>
+          <Sidebar />
+          <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/profile" element={<ProfileForm />} />
+              <Route path="/customers" element={<CustomerList />} />
+              <Route path="/vendor" element={<VendorList />} />
+              <Route path="/purchase" element={<PurchaseList />} />
+              <Route path="/hsn" element={<HSNList />} />
+              <Route path="/invoice" element={<SalesReport />} />
+              <Route path="/medicinelist" element={<MedicineList />} />
+              <Route path="/nonmedicinelist" element={<NonMedicineList />} />
+              <Route path="/order" element={<OrderList />} />
+              <Route path="/print-invoice" element={<PrintInvoice />} />
+              <Route path="/pdf-export" element={<exportToPDF />} />
+            </Routes>
+          </Box>
         </Box>
-      </Box>
+      </Router>
     </ThemeProvider>
   );
 }
 
 export default App;
+
