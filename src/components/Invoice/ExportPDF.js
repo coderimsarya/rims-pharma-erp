@@ -22,6 +22,7 @@ export const exportToPDF = () => {
   doc.text('Page No.: 1', 195, 35, { align: 'right' });
 
   // Invoice title
+  doc.line(15, 55, 195, 55);
   doc.setFontSize(12);
   doc.text('GST INVOICE', 105, 50, { align: 'center' });
   doc.setFontSize(8);
