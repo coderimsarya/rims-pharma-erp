@@ -182,7 +182,7 @@ const Sidebar = () => {
                 {!isCollapsed && (
                   <ListItemText 
                     primary={item.text} 
-                    primaryTypographyProps={{
+                    primaryTypographyProps2={{
                       fontSize: '0.9rem',
                       fontWeight: location.pathname === item.path ? 'bold' : 'normal',
                     }}
@@ -209,7 +209,7 @@ const Sidebar = () => {
                     >
                       <ListItemText 
                         primary={subItem.text}
-                        primaryTypographyProps={{
+                        primaryTypographyProps2={{
                           fontSize: '0.8rem',
                           fontWeight: location.pathname === subItem.path ? 'bold' : 'normal',
                         }}
