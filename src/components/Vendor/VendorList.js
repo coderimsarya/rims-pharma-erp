@@ -107,7 +107,7 @@ export default function VendorList() {
           <TableContainer component={Paper}>
             <Table>
               <TableHead>
-                <TableRow sx={{ bgcolor: '#428BCA', '& > *': { color: 'white' } }}>
+                <TableRow sx={{ bgcolor: '#428BCA', '& > *': { color: '#FFFFFF' } }}>
                   <TableCell>Vn-code</TableCell>
                   <TableCell>Business Name</TableCell>
                   <TableCell>Phone</TableCell>

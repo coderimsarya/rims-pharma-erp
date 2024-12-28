@@ -48,7 +48,7 @@ const MedicineList = () => {
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
-            <TableRow>
+            <TableRow sx={{ bgcolor: '#428BCA', '& > *': { color: '#FFFFFF' } }}>
               <TableCell>Name</TableCell>
               <TableCell>Type</TableCell>
               <TableCell>Strength</TableCell>
