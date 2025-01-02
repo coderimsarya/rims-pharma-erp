@@ -7,29 +7,39 @@ import {
   Button,
   DialogContent,
   DialogActions,
+  Divider,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const HeaderBox = styled(Box)`
-  background-color: #22aeff;
+  background-color: #1976d2;
   color: white;
-  padding: 20px;
+  padding: 24px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  margin-bottom: 24px;
 `;
 
 const SectionTitle = styled(Typography)`
-  color: #00B0F0;
+  color: #1976d2;
   font-size: 1.2rem;
-  margin-bottom: 20px;
-  margin-top: 20px;
-`
+  font-weight: 500;
+  margin-bottom: 24px;
+  margin-top: 32px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #1976d2;
+`;
 
-const VendorCode = styled(Typography)({
-  color: '#666',
-  marginTop: '20px',
-  fontSize: '0.9rem',
-});
+const VendorCode = styled(Typography)`
+  color: #1976d2;
+  marginTop: 24px;
+  fontSize: 1rem;
+  fontWeight: 500;
+  padding: 8px;
+  backgroundColor: #e3f2fd;
+  borderRadius: 4px;
+  display: inline-block;
+`;
 
 export default function AddVendor({ onClose }) {
   const [formData, setFormData] = useState({
@@ -69,7 +79,7 @@ export default function AddVendor({ onClose }) {
         <Typography variant="h6">Add New Vendor</Typography>
       </HeaderBox>
       
-      <DialogContent>
+      <DialogContent sx={{ px: 4, py: 2 }}>
         <form id="add-vendor-form" onSubmit={handleSubmit}>
           <SectionTitle>Vendor Details</SectionTitle>
           <Grid2 container spacing={3}>
@@ -138,7 +148,7 @@ export default function AddVendor({ onClose }) {
               />
             </Grid2>
           </Grid2>
-
+          <Divider sx={{ my: 4 }} />
           <SectionTitle>Business Details</SectionTitle>
           <Grid2 container spacing={3}>
             <Grid2 size={{ xs: 12 }}>
@@ -243,11 +253,12 @@ export default function AddVendor({ onClose }) {
           form="add-vendor-form"
           variant="contained"
           sx={{
-            bgcolor: '#4267B2',
+            bgcolor: '#1976d2',
             '&:hover': {
-              bgcolor: '#365899',
+              bgcolor: '#1565c0',
             },
             px: 4,
+            py: 1,
           }}
         >
           Submit
